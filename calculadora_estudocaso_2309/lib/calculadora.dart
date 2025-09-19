@@ -6,21 +6,45 @@ Crie também, uma classe executora, instancie um objeto da classe Calculadora, c
 */
 
 class Calculadora {
-  int soma = 0;
-  int subtracao = 0;
-  int multiplicacao = 0;
-  int divisao = 0;
+  String resultadoSoma = "";
+  String resultadoSubtracao = "";
+  String resultadoMultiplicacao = "";
+  String resultadoDivisao = "";
 
   Calculadora();
 
-  void calculos(int algarismo1, int algarismo2) {
-    soma = algarismo1 + algarismo2;
-    subtracao = algarismo1 - algarismo2;
-    multiplicacao = algarismo1 * algarismo2;
-    divisao = algarismo1 ~/ algarismo2;
+  void somar(int algarismo1, int algarismo2) {
+    int soma = algarismo1 + algarismo2;
+    resultadoSoma = "Soma: $algarismo1 + $algarismo2 = $soma";
+  }
+
+  void subtrair(int algarismo1, int algarismo2) {
+    int subtracao = algarismo1 - algarismo2;
+    resultadoSubtracao = "Subtração: $algarismo1 - $algarismo2 = $subtracao";
+  }
+
+  void multiplicar(int algarismo1, int algarismo2) {
+    int multiplicacao = algarismo1 * algarismo2;
+    resultadoMultiplicacao =
+        "Multiplicação: $algarismo1 x $algarismo2 = $multiplicacao";
+  }
+
+  void dividir(int algarismo1, int algarismo2) {
+    if (algarismo2 != 0) {
+      int divisao = algarismo1 ~/ algarismo2;
+      resultadoDivisao = "Divisão: $algarismo1 / $algarismo2 = $divisao";
+    } else {
+      resultadoDivisao = "Divisão: $algarismo1 / 0 = 0";
+    }
   }
 
   void display() {
-    print("$soma, $subtracao, $multiplicacao, $divisao");
+    print("------------------------");
+    print("RESULTADOS: ");
+    print(resultadoSoma);
+    print(resultadoSubtracao);
+    print(resultadoMultiplicacao);
+    print(resultadoDivisao);
+    print("------------------------");
   }
 }
