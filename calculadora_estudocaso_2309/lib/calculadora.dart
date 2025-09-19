@@ -5,8 +5,22 @@ A cada operação, o resultado deverá ser mostrado chamando-se o método displa
 Crie também, uma classe executora, instancie um objeto da classe Calculadora, chame os 4 métodos criados com as operações matemáticas, passando 2 valores inteiros em cada um.
 */
 
-import 'package:calculadora_estudocaso_2309/sistema_calculadora.dart';
+class Calculadora {
+  int soma = 0;
+  int subtracao = 0;
+  int multiplicacao = 0;
+  int divisao = 0;
 
-void main() {
-  SistemaCalculadora().iniciar();
+  Calculadora();
+
+  void calculos(int algarismo1, int algarismo2) {
+    soma = algarismo1 + algarismo2;
+    subtracao = algarismo1 - algarismo2;
+    multiplicacao = algarismo1 * algarismo2;
+    divisao = algarismo1 ~/ algarismo2;
+  }
+
+  void display() {
+    print("$soma, $subtracao, $multiplicacao, $divisao");
+  }
 }
